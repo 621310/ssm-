@@ -1,0 +1,36 @@
+/*player.html的css*/
+body{
+    background: url(../img/page6-bg.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.playercontainer{
+    background: rgba(44, 39, 39,0.5);
+}
+.page-header{
+    border-bottom: 3px #ddd solid;
+}
+.searchplayer{
+    width: 300px;
+    margin-right: 80px;
+    float: right;
+}
+.thumbnail{
+    border: 1px solid #000;
+    background: rgba(44, 39, 39,0.5);
+}
+.thumbnail:hover{
+    box-shadow: .5px .5px 1px #394043;
+    border: 1px #394043 solid;
+}
+.thumbnail img{
+    width: 150px;
+    height: 150px;
+}
+.thumbnail .caption h3{
+    font-size: 16px;
+    color: #ddd;
+}
+.zan{
+    width: 54px;
+    height: 34px;
+}

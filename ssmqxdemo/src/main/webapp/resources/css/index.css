@@ -1,0 +1,74 @@
+body{
+    background: url(../img/page3-bg.jpg) no-repeat;
+    background-size: 100% 100%;
+} 
+.item img{
+    width: 100%;
+    height: 100%;
+}
+.firstbisai{
+    position: relative;
+    height: 88px;
+}
+.kaituozhe{
+    position: absolute;
+    left: 0px;
+    top: 15px;
+    height: 55px;
+    padding-left: 60px;
+    background: url(../img/qiudui.png) no-repeat;
+    background-position: -10px -1514px;
+}
+.kaierteren{
+    position: absolute;
+    left: 0px;
+    top: 15px;
+    height: 55px;
+    padding-left: 60px;
+    background: url(../img/qiudui.png) no-repeat;
+    background-position: -10px -20px;
+}
+.juejin{
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    height: 55px;
+    padding-right: 60px;
+    background: url(../img/qiudui.png) no-repeat;
+    background-position: 30px -1268px;
+}
+strong{
+    font-size: 20px;
+}
+.date{
+    font-size: 10px;
+    position: absolute;
+    top: 25px;
+    left: 40%;
+}
+.vs{
+    position: absolute;
+    top: 40px;
+    left: 50%;
+}
+.news{
+    width: 450px;
+    height: 80px;
+    margin-bottom: 20px;
+    float: left;
+    margin-right: 100px;
+}
+.news img{
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+    float: left;
+}
+.news p {
+    height: 80px;
+    overflow: hidden;
+}
+.news p strong{
+font-size: 15px;
+line-height: 40px;
+}

@@ -1,0 +1,11 @@
+2019-05-02 12:31:03,303 DEBUG Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@6d8a00e3' adapter.
+2019-05-02 12:31:03,305 DEBUG Retrieving column information for table "users"
+2019-05-02 13:03:57,072 DEBUG Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@6d8a00e3' adapter.
+2019-05-02 13:03:57,075 DEBUG Retrieving column information for table "users"
+2019-05-02 13:19:14,837 DEBUG Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@6d8a00e3' adapter.
+2019-05-02 13:19:14,840 DEBUG Retrieving column information for table "user"
+2019-05-02 13:19:14,932 DEBUG Found column "id", data type 4, in table "ssmproject..user"
+2019-05-02 13:19:14,933 DEBUG Found column "username", data type 12, in table "ssmproject..user"
+2019-05-02 13:19:14,933 DEBUG Found column "password", data type 12, in table "ssmproject..user"
+2019-05-02 13:19:14,934 DEBUG Found column "email", data type 12, in table "ssmproject..user"
+2019-05-02 13:19:14,934 DEBUG Found column "phone", data type 12, in table "ssmproject..user"

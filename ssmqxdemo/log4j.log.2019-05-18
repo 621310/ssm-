@@ -1,0 +1,107 @@
+2019-05-18 12:27:48,521 DEBUG Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@6d8a00e3' adapter.
+2019-05-18 12:27:48,521 DEBUG Retrieving column information for table "user"
+2019-05-18 12:27:48,571 DEBUG Found column "id", data type 4, in table "ssmproject..user"
+2019-05-18 12:27:48,571 DEBUG Found column "username", data type 12, in table "ssmproject..user"
+2019-05-18 12:27:48,571 DEBUG Found column "password", data type 12, in table "ssmproject..user"
+2019-05-18 12:27:48,571 DEBUG Found column "email", data type 12, in table "ssmproject..user"
+2019-05-18 12:27:48,571 DEBUG Found column "phone", data type 12, in table "ssmproject..user"
+2019-05-18 12:27:48,581 DEBUG Retrieving column information for table "role"
+2019-05-18 12:27:48,591 DEBUG Found column "id", data type 4, in table "ssmproject..role"
+2019-05-18 12:27:48,591 DEBUG Found column "role_name", data type 12, in table "ssmproject..role"
+2019-05-18 12:38:11,513 DEBUG Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@6d8a00e3' adapter.
+2019-05-18 12:38:11,514 DEBUG Retrieving column information for table "user"
+2019-05-18 12:38:11,587 DEBUG Found column "id", data type 4, in table "ssmproject..user"
+2019-05-18 12:38:11,587 DEBUG Found column "username", data type 12, in table "ssmproject..user"
+2019-05-18 12:38:11,587 DEBUG Found column "password", data type 12, in table "ssmproject..user"
+2019-05-18 12:38:11,588 DEBUG Found column "email", data type 12, in table "ssmproject..user"
+2019-05-18 12:38:11,588 DEBUG Found column "phone", data type 12, in table "ssmproject..user"
+2019-05-18 12:38:11,601 DEBUG Retrieving column information for table "role"
+2019-05-18 12:38:11,620 DEBUG Found column "id", data type 4, in table "ssmproject..role"
+2019-05-18 12:38:11,620 DEBUG Found column "role_name", data type 12, in table "ssmproject..role"
+2019-05-18 12:38:11,624 DEBUG Retrieving column information for table "resource"
+2019-05-18 12:38:11,630 DEBUG Found column "id", data type 4, in table "ssmproject..resource"
+2019-05-18 12:38:11,630 DEBUG Found column "res_name", data type 12, in table "ssmproject..resource"
+2019-05-18 13:09:20,871 DEBUG Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@6d8a00e3' adapter.
+2019-05-18 13:09:20,873 DEBUG Retrieving column information for table "user"
+2019-05-18 13:09:20,936 DEBUG Found column "id", data type 4, in table "ssmproject..user"
+2019-05-18 13:09:20,937 DEBUG Found column "username", data type 12, in table "ssmproject..user"
+2019-05-18 13:09:20,937 DEBUG Found column "password", data type 12, in table "ssmproject..user"
+2019-05-18 13:09:20,937 DEBUG Found column "email", data type 12, in table "ssmproject..user"
+2019-05-18 13:09:20,938 DEBUG Found column "phone", data type 12, in table "ssmproject..user"
+2019-05-18 13:09:20,955 DEBUG Retrieving column information for table "role"
+2019-05-18 13:09:21,009 DEBUG Found column "id", data type 4, in table "ssmproject..role"
+2019-05-18 13:09:21,010 DEBUG Found column "role_name", data type 12, in table "ssmproject..role"
+2019-05-18 13:09:21,013 DEBUG Retrieving column information for table "resource"
+2019-05-18 13:09:21,073 DEBUG Found column "id", data type 4, in table "ssmproject..resource"
+2019-05-18 13:09:21,073 DEBUG Found column "res_name", data type 12, in table "ssmproject..resource"
+2019-05-18 13:23:52,774 DEBUG Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2eee9593
+2019-05-18 13:23:53,274 DEBUG Identified candidate component class: file [D:\springSTS\ssmqxdemo\target\classes\cn\lyl\ssmqxdemo\service\UserServiceImpl.class]
+2019-05-18 13:23:53,343 DEBUG Identified candidate component class: file [D:\springSTS\ssmqxdemo\target\classes\cn\lyl\ssmqxdemo\mapper\BaseMapper.class]
+2019-05-18 13:23:53,343 DEBUG Identified candidate component class: file [D:\springSTS\ssmqxdemo\target\classes\cn\lyl\ssmqxdemo\mapper\ResourceMapper.class]
+2019-05-18 13:23:53,343 DEBUG Identified candidate component class: file [D:\springSTS\ssmqxdemo\target\classes\cn\lyl\ssmqxdemo\mapper\RoleMapper.class]
+2019-05-18 13:23:53,343 DEBUG Identified candidate component class: file [D:\springSTS\ssmqxdemo\target\classes\cn\lyl\ssmqxdemo\mapper\UserMapper.class]
+2019-05-18 13:23:53,343 DEBUG Creating MapperFactoryBean with name 'baseMapper' and 'cn.lyl.ssmqxdemo.mapper.BaseMapper' mapperInterface
+2019-05-18 13:23:53,344 DEBUG Enabling autowire by type for MapperFactoryBean with name 'baseMapper'.
+2019-05-18 13:23:53,344 DEBUG Creating MapperFactoryBean with name 'resourceMapper' and 'cn.lyl.ssmqxdemo.mapper.ResourceMapper' mapperInterface
+2019-05-18 13:23:53,344 DEBUG Enabling autowire by type for MapperFactoryBean with name 'resourceMapper'.
+2019-05-18 13:23:53,344 DEBUG Creating MapperFactoryBean with name 'roleMapper' and 'cn.lyl.ssmqxdemo.mapper.RoleMapper' mapperInterface
+2019-05-18 13:23:53,345 DEBUG Enabling autowire by type for MapperFactoryBean with name 'roleMapper'.
+2019-05-18 13:23:53,345 DEBUG Creating MapperFactoryBean with name 'userMapper' and 'cn.lyl.ssmqxdemo.mapper.UserMapper' mapperInterface
+2019-05-18 13:23:53,345 DEBUG Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2019-05-18 13:23:53,345 DEBUG Loaded 18 bean definitions from class path resource [spring.xml]
+2019-05-18 13:23:53,398 DEBUG Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2019-05-18 13:23:53,461 DEBUG Creating shared instance of singleton bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+2019-05-18 13:23:53,498 DEBUG Found key 'jdbc.user' in PropertySource 'localProperties' with value of type String
+2019-05-18 13:23:53,499 DEBUG Found key 'jdbc.password' in PropertySource 'localProperties' with value of type String
+2019-05-18 13:23:53,499 DEBUG Found key 'jdbc.driverClass' in PropertySource 'localProperties' with value of type String
+2019-05-18 13:23:53,499 DEBUG Found key 'jdbc.jdbcUrl' in PropertySource 'localProperties' with value of type String
+2019-05-18 13:23:53,499 DEBUG Found key 'jdbc.acquireIncrement' in PropertySource 'localProperties' with value of type String
+2019-05-18 13:23:53,499 DEBUG Found key 'jdbc.initialPoolSize' in PropertySource 'localProperties' with value of type String
+2019-05-18 13:23:53,499 DEBUG Found key 'jdbc.minPoolSize' in PropertySource 'localProperties' with value of type String
+2019-05-18 13:23:53,499 DEBUG Found key 'jdbc.maxPoolSize' in PropertySource 'localProperties' with value of type String
+2019-05-18 13:23:53,499 DEBUG Found key 'jdbc.maxStatements' in PropertySource 'localProperties' with value of type String
+2019-05-18 13:23:53,499 DEBUG Found key 'jdbc.maxStatementsPerConnection' in PropertySource 'localProperties' with value of type String
+2019-05-18 13:23:53,500 DEBUG Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2019-05-18 13:23:53,502 DEBUG Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2019-05-18 13:23:53,504 DEBUG Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2019-05-18 13:23:53,505 DEBUG Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2019-05-18 13:23:53,508 DEBUG Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2019-05-18 13:23:53,540 DEBUG Creating shared instance of singleton bean 'userService'
+2019-05-18 13:23:53,540 DEBUG Creating shared instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2019-05-18 13:23:53,607 DEBUG Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2019-05-18 13:23:53,617 DEBUG Creating shared instance of singleton bean 'userMapper'
+2019-05-18 13:23:53,628 DEBUG Creating shared instance of singleton bean 'sqlSessionFactory'
+2019-05-18 13:23:53,629 DEBUG Creating shared instance of singleton bean 'dataSource'
+2019-05-18 13:23:53,686 INFO MLog clients using slf4j logging.
+2019-05-18 13:23:53,693 DEBUG Reading VM config for path list /com/mchange/v2/log/default-mchange-log.properties, /mchange-commons.properties, /c3p0.properties, hocon:/reference,/application,/c3p0,/, /mchange-log.properties, /
+2019-05-18 13:23:53,693 DEBUG The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+2019-05-18 13:23:53,693 DEBUG The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+2019-05-18 13:23:53,693 DEBUG The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+2019-05-18 13:23:53,698 DEBUG The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+2019-05-18 13:23:53,699 DEBUG The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+2019-05-18 13:23:53,699 DEBUG The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+2019-05-18 13:23:53,699 DEBUG The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+2019-05-18 13:23:53,699 DEBUG The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+2019-05-18 13:23:54,083 INFO Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2019-05-18 13:23:54,102 DEBUG MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge164a21jvoyrn1xt1uj3|20d525,name=1hge164a21jvoyrn1xt1uj3|20d525 registered.
+2019-05-18 13:23:54,119 DEBUG MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge164a21jvoyrn1xt1uj3|20d525,name=1hge164a21jvoyrn1xt1uj3|20d525 unregistered, in order to be reregistered after update.
+2019-05-18 13:23:54,120 DEBUG MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge164a21jvoyrn1xt1uj3|20d525,name=1hge164a21jvoyrn1xt1uj3|20d525 registered.
+2019-05-18 13:23:54,391 DEBUG Parsed configuration file: 'class path resource [mybatis-config.xml]'
+2019-05-18 13:23:54,463 DEBUG Parsed mapper file: 'file [D:\springSTS\ssmqxdemo\target\classes\cn\lyl\ssmqxdemo\mapper\BaseMapper.xml]'
+2019-05-18 13:23:54,598 DEBUG Parsed mapper file: 'file [D:\springSTS\ssmqxdemo\target\classes\cn\lyl\ssmqxdemo\mapper\ResourceMapper.xml]'
+2019-05-18 13:23:54,646 DEBUG Parsed mapper file: 'file [D:\springSTS\ssmqxdemo\target\classes\cn\lyl\ssmqxdemo\mapper\RoleMapper.xml]'
+2019-05-18 13:23:54,693 WARN Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [D:\springSTS\ssmqxdemo\target\classes\cn\lyl\ssmqxdemo\mapper\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [spring.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\springSTS\ssmqxdemo\target\classes\cn\lyl\ssmqxdemo\mapper\UserMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\springSTS\ssmqxdemo\target\classes\cn\lyl\ssmqxdemo\mapper\UserMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for cn.lyl.ssmqxdemo.mapper.UserMapper.BaseResultMap
+2019-05-18 20:31:01,351 DEBUG Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@6d8a00e3' adapter.
+2019-05-18 20:31:01,368 DEBUG Retrieving column information for table "user"
+2019-05-18 20:31:01,409 DEBUG Found column "id", data type 4, in table "ssmproject..user"
+2019-05-18 20:31:01,409 DEBUG Found column "username", data type 12, in table "ssmproject..user"
+2019-05-18 20:31:01,409 DEBUG Found column "password", data type 12, in table "ssmproject..user"
+2019-05-18 20:31:01,410 DEBUG Found column "email", data type 12, in table "ssmproject..user"
+2019-05-18 20:31:01,410 DEBUG Found column "phone", data type 12, in table "ssmproject..user"
+2019-05-18 20:37:01,571 DEBUG Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@6d8a00e3' adapter.
+2019-05-18 20:37:01,584 DEBUG Retrieving column information for table "role"
+2019-05-18 20:37:01,620 DEBUG Found column "id", data type 4, in table "ssmproject..role"
+2019-05-18 20:37:01,621 DEBUG Found column "role_name", data type 12, in table "ssmproject..role"
+2019-05-18 20:37:01,631 DEBUG Retrieving column information for table "resource"
+2019-05-18 20:37:01,655 DEBUG Found column "id", data type 4, in table "ssmproject..resource"
+2019-05-18 20:37:01,655 DEBUG Found column "res_name", data type 12, in table "ssmproject..resource"

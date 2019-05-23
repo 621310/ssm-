@@ -1,0 +1,44 @@
+body{
+    background: url(../img/page4-bg.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.cons{
+    background: #ffffff;
+    border: 1px #ccc solid;
+    padding: 0px;
+}
+.tab-content{
+    height: 445px;
+}
+.nav-tabs li{
+    padding: 0px;
+    border: none;
+}
+.nav-tabs li a{
+    border-radius: 0px;
+    border: none;
+    background: #eeeeee;
+    margin: 0;
+}
+#loginform,#registform{
+    padding: 20px 40px 0 40px;
+}
+.loginbtn,.registbtn{
+    width: 100%;
+}
+.from-group{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.loginicon{
+    margin-top: 40px;
+}
+.loginicon span{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+#registform form .form-group{
+    padding-bottom: 20px;
+}

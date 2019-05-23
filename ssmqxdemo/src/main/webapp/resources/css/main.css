@@ -1,0 +1,43 @@
+/*导航以及公共样式*/
+.logo{
+    background: url(../img/logo.jpg) no-repeat;
+    background-size: 30px 50px;
+    padding-left: 38px;
+}
+.user{
+    font-size: 25px;
+    color: green;
+}
+ul li{
+    font-size: 15px;
+}
+
+/*脚步样式*/
+/*index.html的底部*/
+.footerlogo img{
+    width: 100px;
+    height: 50px;
+}
+.footerlogo{
+    margin-bottom: 15px;
+}
+.footer{
+ background: rgba(61, 55, 55, 0.3);
+    height: 150px ;
+}
+.bgopacity{
+    padding-top: 10px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+}
+.bgopacity:hover{ 
+    cursor: pointer;
+    background: rgba(61, 55, 55, 0.4);
+}
+.bgopacity p{
+    font-size: 12px;
+}
+.bgopacity p a:hover{
+    color:white;
+}
