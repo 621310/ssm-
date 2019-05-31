@@ -18,6 +18,23 @@
     <![endif]-->
   <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/main.css">
   <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/login.css">
+  <script type="text/javascript" src="<%=request.getContextPath() %>/resources/lib/aes.js"></script>
+  <script type="text/javascript" src="<%=request.getContextPath() %>/resources/lib/pad-zeropadding-min.js"></script>
+   <script type="text/javascript">
+  //前端对用户密码使用aes进行可逆加密，防止重放攻击
+  	function checkForm() {
+  		var pwd = document.getElementById("pwd");
+  		var pwdval = pwd.value;
+		var uuidSalt = document.getElementById("uuidSalt").value;
+		pwdval = encrypt(pwdval,uuidSalt,uuidSalt);
+		pwd.value = pwdval;
+	}
+  	 function encrypt(data,key,iv) {
+     	var key1  = CryptoJS.enc.Latin1.parse(key);
+         var iv1   = CryptoJS.enc.Latin1.parse(iv);
+         return CryptoJS.AES.encrypt(data, key1, {iv:iv1,mode:CryptoJS.mode.CBC,padding:CryptoJS.pad.ZeroPadding}).toString();
+     }
+  </script>
 </head>
 
 <body>
@@ -59,7 +76,7 @@
       </div><!-- /.navbar-collapse -->
     </div>
   </nav>
-
+<input type="hidden" value="${info }" id="infomessage">
   <div class="container">
 
     <div class="row">
@@ -73,17 +90,18 @@
         <div class="tab-content">
           <div id="loginform" class="tab-pane fade in active">
 
-            <form action="" method="POST" role="form">
+            <form action="${pageContext.request.contextPath }/userLogin" method="POST" role="form" onsubmit="return checkForm()">
+            	<input type="hidden" value="${uuidSalt }" id="uuidSalt">
               <div class="form-group">
                 <label for="">用户</label>
-                <input type="text" class="form-control" id="" placeholder="请输入邮箱/用户名/手机号">
+                <input type="text" name="username" class="form-control" id="" placeholder="请输入邮箱/用户名/手机号">
               </div>
               <div class="from-group">
                 <label for="">密码</label>
-                <input type="password" class="form-control" id="" placeholder="请输入密码">
+                <input type="password" name="password" class="form-control" id="pwd" placeholder="请输入密码">
               </div>
               <div class="checkbox text-center remeberpwd">
-                <label for=""><input type="checkbox"> 记住密码</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                <label for=""><input type="checkbox" name="rememberme" value="1"> 记住密码</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
                   href="#">找回密码</a>
 
               </div>
@@ -101,35 +119,35 @@
 
           </div>
           <div id="registform" class="tab-pane fade">
-            <form class="form-horizontal" action="#">
+            <form class="form-horizontal" action="${pageContext.request.contextPath }/userRegist" method="post">
               <div class="form-group">
                 <label for="" class="col-sm-2 control-label">用户名</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="" placeholder="请输入用户名">
+                  <input type="text" class="form-control" name="username" id="" placeholder="请输入用户名">
                 </div>
               </div>
               <div class="form-group">
                 <label for="" class="col-sm-2 control-label">密码</label>
                 <div class="col-sm-10">
-                  <input type="password" class="form-control" id="" placeholder="请输入密码">
+                  <input type="password" class="form-control" name="password" id="" placeholder="请输入密码">
                 </div>
               </div>
               <div class="form-group">
                 <label for="" class="col-sm-2 control-label">邮箱</label>
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" id="" placeholder="请输入邮箱">
+                  <input type="email" class="form-control" name="email" id="" placeholder="请输入邮箱">
                 </div>
               </div>
               <div class="form-group">
                 <label for="" class="col-sm-2 control-label">手机号</label>
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" id="" placeholder="请输入手机号">
+                  <input type="text" class="form-control" id="" name="phone" placeholder="请输入手机号">
                 </div>
               </div>
               <div class="form-group">
                 <label for="" class="col-sm-2 control-label">验证码</label>
                   <div class="col-sm-6">
-                    <input type="email" class="form-control" id="" placeholder="请输入手机验证码">
+                    <input type="text" class="form-control" id="" name="phonecode" placeholder="请输入手机验证码">
                   </div>
                   <div class="col-sm-4">
                     <button class="btn btn-primary">点击获取验证码</button>
@@ -167,9 +185,11 @@
       <p class="text-center">Copyright © 1998 - 2019 Tencent. All Rights Reserved</p>
     </div>
   </div>
+ 
   <script src="<%=request.getContextPath() %>/resources/lib/jq/jquery-3.3.1.min.js"></script>
   <script src="<%=request.getContextPath() %>/resources/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
   <script src="<%=request.getContextPath() %>/resources/js/index.js" type="text/javascript"></script>
+   <script type="text/javascript" src="<%=request.getContextPath()%>/resources/lib/bootbox.js"></script>
 </body>
 
 </html>

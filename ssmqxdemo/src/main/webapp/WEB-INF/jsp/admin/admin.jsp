@@ -33,7 +33,7 @@
                 <span>admin ${year }-${month }-${day }</span>
             </div>
             <div class="col-md-1 tuichu">
-                 <span class="iconfont icon-tuichu"></span>
+                 <a href="${pageContext.request.contextPath }/logout"><span class="iconfont icon-tuichu"></span></a>
             </div>
         </div>
         

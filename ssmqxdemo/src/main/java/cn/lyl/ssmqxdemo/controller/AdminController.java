@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,11 +23,14 @@ import cn.lyl.ssmqxdemo.service.RoleService;
 import cn.lyl.ssmqxdemo.service.UserService;
 
 @Controller
-public class AdminController {
+public class AdminController extends BaseController {
 	@Autowired
 	private RoleService roleService;
 	@Autowired
 	private UserService userService;
+	
+	
+
 
 	@GetMapping("/admin")
 	public String admin(Model model) {
@@ -38,7 +43,7 @@ public class AdminController {
 		model.addAttribute("day",day);
 		return "admin/admin";
 	}
-	
+	//@RequiresPermissions(value="userlist")
 	@RequestMapping(value="/admin/sysuser",method=RequestMethod.GET,produces="text/html;charset=UTF-8")
 	public String usermanger(Model model,Integer pageNum,Integer pageSize,String info) {
 		model.addAttribute("info",info);
@@ -55,6 +60,7 @@ public class AdminController {
 		return "admin/sysuser";
 	}
 	
+	//@RequiresPermissions(value="adduser")
 	@PostMapping("/admin/adduser")
 	public String adminaddUser(User user,Integer roleid) {
 		int i = userService.addUser(user,roleid);
@@ -66,7 +72,7 @@ public class AdminController {
 		}
 		return "redirect:/admin/sysuser?info="+info;
 	}
-	
+	//@RequiresPermissions(value="updateuser")
 	@RequestMapping(value="/admin/updateUserView",method=RequestMethod.GET,produces="text/html;charset=UTF-8")
 	public String updateUser(Model model,Integer id,Integer pageNum) {
 		model.addAttribute("pageNum",pageNum);//点击取消后返回进来时的页码
@@ -92,7 +98,7 @@ public class AdminController {
 		return "redirect:/admin/sysuser?pageNum="+pageNum+"&info="+info;
 	
 	}
-	
+	//@RequiresPermissions(value="deleteuser")
 	@PostMapping("/admin/deleteuser")
 	public String deleteUser(Integer pageNum,Integer id) {
 		int i = userService.deleteUserAndRole(id);

@@ -23,7 +23,7 @@ public interface UserService extends BaseService<User> {
 	public int updateUserAndRole(User user, Integer roleid);
 
 	public int deleteUserAndRole(Integer id);
-
+	//ÅúÁ¿É¾³ý
 	public void deleteBatchUser(Integer[] idInt);
 
 	public PageInfo<User> selectUserByusernameOrphone(int pageNum,int pageSize,String username, String phone);

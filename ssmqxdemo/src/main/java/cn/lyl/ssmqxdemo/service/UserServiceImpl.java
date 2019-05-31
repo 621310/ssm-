@@ -2,6 +2,8 @@ package cn.lyl.ssmqxdemo.service;
 
 import java.util.List;
 
+import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +39,11 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 
 	@Override
 	public int addUser(User user, Integer roleid) {
+		//将密码加密后存入数据库
+		String pswd = user.getPassword();
+		ByteSource pswd1 = ByteSource.Util.bytes(pswd);
+		Object pswd2 = new SimpleHash("MD5",pswd1,user.getUsername(),1024);
+		user.setPassword(pswd2.toString());
 		//向user表中插入一个用户
 		int i = userMapper.add("user", new Object[] { null,user.getUsername(),user.getPassword(),user.getEmail(),user.getPhone()});
 		//根据插入用户的username获取该用户
@@ -69,6 +76,7 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 
 	@Override
 	public int updateUserAndRole(User user, Integer roleid) {
+		
 		if("".equals(user.getUsername().trim())) {
 			user.setUsername(null);
 		}
@@ -80,6 +88,13 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 		}
 		if("".equals(user.getPhone().trim())) {
 			user.setPhone(null);
+		}
+		if(user.getPassword() != null) {
+			//将密码加密后存入数据库
+			String pswd = user.getPassword();
+			ByteSource pswd1 = ByteSource.Util.bytes(pswd);
+			Object pswd2 = new SimpleHash("MD5",pswd1,user.getUsername(),1024);
+			user.setPassword(pswd2.toString());
 		}
 		int i = userMapper.updateByPrimaryKeySelective(user);//修改用户信息
 		UserRole userrole = userRoleMapper.selectIdByUid(user.getId());//根据用户ID获取角色对象

@@ -1,5 +1,7 @@
 package cn.lyl.ssmqxdemo.mapper;
 
+import java.util.List;
+
 import cn.lyl.ssmqxdemo.model.Resource;
 
 public interface ResourceMapper extends BaseMapper {
@@ -14,4 +16,6 @@ public interface ResourceMapper extends BaseMapper {
     int updateByPrimaryKeySelective(Resource record);
 
     int updateByPrimaryKey(Resource record);
+
+	List<Resource> selectAllResource();
 }

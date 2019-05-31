@@ -91,8 +91,10 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   
-  <select id="seleteByUsername" resultType="cn.lyl.ssmqxdemo.model.User">
-  	select * from user u where u.username=#{username}
+  <select id="seleteByUsername" resultMap="UserRelRoleMap">
+  	select u.id,u.username,u.password,u.email,u.phone 
+  	from user u 
+  	where u.username=#{username}
   </select>
   
   <select id="selectAllUser" resultMap="UserRelRoleMap">
@@ -101,7 +103,7 @@
   	user u
   </select>
   <select id="getRoleByUid" resultType="cn.lyl.ssmqxdemo.model.Role">
-  	select r.id,r.rolename
+  	select r.id,r.rolename,r.code
   	from 
   	role r,user_role ur 
   	where 

@@ -182,7 +182,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger delsurebtn" data-dismiss="modal">确认</button>
-					<button type="button" id="adduserbtn" class="btn btn-primary ">取消</button>
+					<button type="button" id="adduserbtn" data-dismiss="modal" class="btn btn-primary ">取消</button>
 				</div>
 			</div>
 		</div>
@@ -193,8 +193,7 @@
 	<script
 		src="<%=request.getContextPath()%>/resources/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/lib/bootbox.js"></script>
-	<script src="<%=request.getContextPath()%>/resources/js/sysuer.js"
-		type="text/javascript"></script>
+	<script src="<%=request.getContextPath()%>/resources/js/sysuer.js" type="text/javascript"></script>
 </body>
 
 </html>

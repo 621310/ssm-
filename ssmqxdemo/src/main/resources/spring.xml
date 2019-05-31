@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:cache="http://www.springframework.org/schema/cache"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
-	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
@@ -63,7 +65,68 @@
 		<property name="mapperLocations" value="classpath:cn/lyl/ssmqxdemo/mapper/*.xml"></property>
 	</bean>
 
-	<mybatis-spring:scan base-package="cn.lyl.ssmqxdemo.mapper" />
+ 	 <mybatis-spring:scan base-package="cn.lyl.ssmqxdemo.mapper" />
 
-
+	<!-- shiro的核心组件：securityManager -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<!-- 配置缓存 -->
+		<property name="cacheManager" ref="cacheManager" />
+		<!-- 配置域realm，用户名，密码，角色都保存在域里，后面要细讲 -->
+		<property name="realm" ref="shiroRealm" />
+		<property name="sessionManager" ref="sessionManager"></property>
+		<property name="rememberMeManager.cookie.maxAge" value="604800"></property>
+	</bean>
+	
+ 	<bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+ 		<property name="globalSessionTimeout" value="3000000"></property>  <!--  全局session失效时间，默认30分钟 -->
+	</bean>
+	
+<!-- 	配置ehcache缓存 -->
+	<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+		<property name="cacheManagerConfigFile" value="classpath:ehcache.xml"></property>
+	</bean>
+	
+<!-- 	配置域 -->
+	<bean id="shiroRealm" class="cn.lyl.ssmqxdemo.service.shiro.ShiroRealm">
+		<!--修改默认的密码比对 -->
+		<property name="credentialsMatcher">
+			<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+				<property name="hashAlgorithmName" value="MD5"></property>
+				<property name="hashIterations" value="1024"></property>
+				<property name="storedCredentialsHexEncoded" value="true"></property>
+			</bean>
+		</property>
+	</bean>
+	
+<!-- 	配置一些基本规则 -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/login" />  
+                 <!-- 登录页面，filterChainDefinitions除没有指定的页面，或者指定权限是anon以外的所有页面，在没登录时候访问都会自动跳转到这里   -->
+		<property name="successUrl" value="/admin" />  <!-- 登录成功后的页面 -->
+ 		<property name="unauthorizedUrl"  value="/nopermissions" /> <!-- 登录后访问没有权限的页面后跳转的页面 -->
+<!-- 		<property name="filterChainDefinitions"> -->
+<!-- 			<value> -->
+<!-- 				/logout = logout -->
+<!-- 				/admin/sysuser = perms[userlist] -->
+<!-- 				/admin/updateUserView = perms[updateuser] -->
+<!-- 				/admin/adduser = perms[adduser] -->
+<!-- 					/admin/deleteuser = perms[deleteuser] -->
+<!-- 				/admin/** = authc     authc表示要登录后，才能访问 -->
+<!-- 				/**= anon  anon表示匿名访问，就是不用登录 -->
+<!-- 			</value> -->
+<!-- 		</property> -->
+		<property name="filterChainDefinitionMap" ref="filterChainDefinitionMap"></property>
+	</bean>
+<!-- 	将权限的基本规则从数据库中动态的写入到配置中 -->
+	<bean id="filterChainDefinitionMap" factory-bean="filterChainDefinitionMapFactory" factory-method="getFilterChainDefinitionMap"></bean>
+	<bean id="filterChainDefinitionMapFactory" class="cn.lyl.ssmqxdemo.service.shiro.FilterChainDefinitionMapFactory"></bean>
+<!-- 	下面的这个bean解决使用注解后访问需要登陆页面不跳转到登陆页面而报异常的错误和访问无权限页面报异常的错误 -->
+<!-- 	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"> -->
+<!-- 		<property name="exceptionMappings"> -->
+<!-- 			<props> -->
+<!-- 				<prop key="org.apache.shiro.authz.UnauthorizedException">nopermissions</prop> -->
+<!-- 			</props> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
 </beans>

@@ -52,7 +52,7 @@
         <!--字段命名策略过程: <columnRenamingRule> >> property name="useActualColumnNames"-->
         <!--alias属性是个神器, 会为所有SQL都添加, 做关联的时候就非常方便了-->
         <!--至于什么Example, 全关了就是-->
-        <table tableName="user_role" domainObjectName="UserRole"
+        <table tableName="role_resource" domainObjectName="RoleResource"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">

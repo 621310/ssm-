@@ -55,4 +55,22 @@
     set role_name = #{roleName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+   
+  <select id="selectRoleByRoleId" resultMap="RoleAndResourceMap">
+  	select r.id,r.rolename,r.code
+  	from role r
+  	where r.id = #{rid}
+  </select>
+  <select id="getResourceByRid" resultType="cn.lyl.ssmqxdemo.model.Resource">
+  		select res.id,res.resname,res.url
+  		from resource res,role_resource rres
+  		where rres.resid = res.id and rres.rid = #{id}
+  </select>
+  <resultMap type="cn.lyl.ssmqxdemo.model.Role" id="RoleAndResourceMap">
+  	 <id column="id" jdbcType="INTEGER" property="id" />
+  	 <result column="rolename" jdbcType="VARCHAR" property="rolename" />
+  	 <result column="code" jdbcType="VARCHAR" property="code" />
+  	 <collection property="resource" select="cn.lyl.ssmqxdemo.mapper.RoleMapper.getResourceByRid" column="id"></collection>
+  </resultMap>
+
 </mapper>

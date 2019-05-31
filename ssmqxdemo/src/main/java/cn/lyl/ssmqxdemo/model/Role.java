@@ -1,9 +1,29 @@
 package cn.lyl.ssmqxdemo.model;
 
-public class Role {
-    private Integer id;
+import java.io.Serializable;
+import java.util.List;
+
+public class Role implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Integer id;
 
     private String rolename;
+    
+    private String code;
+    
+    private List<Resource> resource;
+
+	public List<Resource> getResource() {
+		return resource;
+	}
+
+	public void setResource(List<Resource> resource) {
+		this.resource = resource;
+	}
 
 	public Integer getId() {
 		return id;
@@ -21,10 +41,21 @@ public class Role {
 		this.rolename = rolename;
 	}
 
-	@Override
-	public String toString() {
-		return "Role [id=" + id + ", rolename=" + rolename + "]";
+	public String getCode() {
+		return code;
 	}
 
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	
+	
+	@Override
+	public String toString() {
+		return "Role [id=" + id + ", rolename=" + rolename + ", code=" + code + ", resource=" + resource + "]";
+	}
+
+	
     
 }

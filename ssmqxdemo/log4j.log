@@ -1,5 +1,5 @@
-2019-05-19 12:31:17,317 DEBUG Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@6d8a00e3' adapter.
-2019-05-19 12:31:17,343 DEBUG Retrieving column information for table "user_role"
-2019-05-19 12:31:17,386 DEBUG Found column "id", data type 4, in table "ssmproject..user_role"
-2019-05-19 12:31:17,387 DEBUG Found column "uid", data type 4, in table "ssmproject..user_role"
-2019-05-19 12:31:17,387 DEBUG Found column "rid", data type 4, in table "ssmproject..user_role"
+2019-05-27 21:21:44,363 DEBUG Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@6cc4c815' adapter.
+2019-05-27 21:21:44,367 DEBUG Retrieving column information for table "role_resource"
+2019-05-27 21:21:44,384 DEBUG Found column "id", data type 4, in table "ssmproject..role_resource"
+2019-05-27 21:21:44,384 DEBUG Found column "rid", data type 4, in table "ssmproject..role_resource"
+2019-05-27 21:21:44,384 DEBUG Found column "resid", data type 4, in table "ssmproject..role_resource"

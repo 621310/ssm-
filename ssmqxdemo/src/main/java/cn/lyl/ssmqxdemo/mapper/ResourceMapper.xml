@@ -55,4 +55,9 @@
     set res_name = #{resName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+    <select id="selectAllResource" resultType="cn.lyl.ssmqxdemo.model.Resource">
+  		select id,resname,url
+  		from resource
+  	</select>
 </mapper>

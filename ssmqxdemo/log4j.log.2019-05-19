@@ -1,0 +1,5 @@
+2019-05-19 12:31:17,317 DEBUG Logging initialized using 'org.mybatis.generator.logging.slf4j.Slf4jLoggingLogFactory@6d8a00e3' adapter.
+2019-05-19 12:31:17,343 DEBUG Retrieving column information for table "user_role"
+2019-05-19 12:31:17,386 DEBUG Found column "id", data type 4, in table "ssmproject..user_role"
+2019-05-19 12:31:17,387 DEBUG Found column "uid", data type 4, in table "ssmproject..user_role"
+2019-05-19 12:31:17,387 DEBUG Found column "rid", data type 4, in table "ssmproject..user_role"
